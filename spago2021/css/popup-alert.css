@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+/*****************************/
+/* MESSAGE BOX RELATED CLASS */
+/*          (START)          */
+/*****************************/
+
+$msgbox-area-width-l: 480px;
+
+$msgbox-area-y-pos: 15px;
+$msgbox-area-x-s: 20px;
+$msgbox-area-x-m: 80px;
+$msgbox-area-x-l: 15px;
+
+$msgbox-box-color: red;
+$msgbox-box-background-color: rgba(#000000, 0.8);
+$msgbox-box-padding: 18px 20px;
+$msgbox-box-margin: 15px;
+$msgbox-box-border-radius: 12px;
+$msgbox-box-box-shadow: 0 10px 15px rgba(#000000, 0.65);
+$msgbox-box-transition-time: 300ms;
+
+$msgbox-close-color: #ffffff;
+$msgbox-close-margin: 20px;
+$msgbox-close-transition-time: 225ms;
+
+$msgbox-close-hover-text-shadow: 0 0 3px #efefef;
+
+.msgbox-area {
+  max-height: 100%;
+  position: fixed;
+  bottom: $msgbox-area-y-pos;
+  left: $msgbox-area-x-s;
+  right: $msgbox-area-x-s;
+  .msgbox-box {
+    font-size: inherit;
+    color: $msgbox-box-color;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    font-style: bold;
+    background-color: $msgbox-box-background-color;
+    padding: $msgbox-box-padding;
+    margin: 0 0 $msgbox-box-margin;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: $msgbox-box-border-radius;
+    box-shadow: $msgbox-box-box-shadow;
+    transition: opacity $msgbox-box-transition-time ease-in;
+    &.msgbox-box-hide {
+      opacity: 0;
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+  .msgbox-content {
+    flex-shrink: 1;
+  } 
+  .msgbox-close {
+    color: $msgbox-close-color;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 0 0 $msgbox-close-margin;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    transition: text-shadow $msgbox-close-transition-time ease-out;
+    &:hover {
+      text-shadow: $msgbox-close-hover-text-shadow;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .msgbox-area {
+    left: $msgbox-area-x-m;
+    right: $msgbox-area-x-m;
+  }
+}
+
+@media (min-width: 768px) {
+  .msgbox-area {
+    width: $msgbox-area-width-l;
+    height: 0;
+    top: $msgbox-area-y-pos;
+    left: auto;
+    right: $msgbox-area-x-l;
+  }
+}
+
+/*****************************/
+/* MESSAGE BOX RELATED CLASS */
+/*           (END)           */
+/*****************************/
+
+$button-color: #1476ff;
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.msgbox-area {
+  font-size: 16px;
+}
+
+.msgbox-message-container {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1, h3 {
+    margin: 10px 20px;
+  }
+  p {
+    margin: 5px 20px;
+  }
+}
+
+.msgbox-message-button {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: inherit;
+  color: white;
+  background-color: $button-color;
+  width: 250px;
+  border: solid 2px darken($button-color, 10%);
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 5px darken($button-color, 10%);
+  transition:
+    background-color 100ms ease-out,
+    box-shadow 100ms ease-out,
+    transform 100ms ease-out;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: lighten($button-color, 5%);
+  }
+  &:active {
+    background-color: darken($button-color, 5%);
+    box-shadow: 0 0 darken($button-color, 10%);
+    transform: translateY(5px);
+  }
+}

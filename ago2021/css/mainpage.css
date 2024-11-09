@@ -1,0 +1,67 @@
+#mensagemTopo {
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    background: transparent;
+   
+
+  /* display:flex;*/
+}
+
+#relogio {
+   vertical-align: middle;
+   height: 100%;
+}
+
+#cronometro {
+   vertical-align: middle;
+   height: 100%;
+   float: right;
+}
+
+#divCronometro{
+  width: 130px; 
+}
+
+.cronometro {
+   font-family: 'Orbitron', sans-serif;
+   font-size: 30px;
+   color: red;
+   background: transparent;
+   float: right;   
+   top:0;
+   right:10px;
+   position: sticky;
+}
+
+.topo  {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+   border-radius: 5px;
+   position:sticky; 
+   top:0; 
+   width:100%;
+   min-height:55px; 
+   z-index:100;
+   background:#d6d8db;
+   opacity:0.99;
+   padding: 4px 10px 7px 10px;
+   /*display:flex;*/
+}
+
+.linhaInativa{
+  opacity: 0.3;
+}
+#imgSom:hover {
+    cursor: pointer;
+}
+body {
+  background: #EEF2F7;
+}
+
